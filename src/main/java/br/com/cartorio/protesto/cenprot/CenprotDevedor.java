@@ -1,33 +1,16 @@
 package br.com.cartorio.protesto.cenprot;
 
-import java.util.LinkedList;
-import java.util.List;
-
-public class CenprotDevedor 
+public class CenprotDevedor extends CenprotParte
 {
-    private String cpfOuCnpj;
-    private String nome;
     private boolean intimado;
     private boolean edital;
     private String editalMotivo;
-    private final List<CenprotEndereco> enderecos;
-
+    
     public CenprotDevedor()
     {
-        enderecos = new LinkedList<CenprotEndereco>();
+        // faz nada
     }
-
-    public String getCpfOuCnpj()
-    {
-        return cpfOuCnpj;
-    }
-
-    public CenprotDevedor setCpfOuCnpj( String cpfOuCnpj )
-    {
-        this.cpfOuCnpj = cpfOuCnpj;
-        return this;
-    }
-
+    
     public boolean isIntimado()
     {
         return intimado;
@@ -61,25 +44,24 @@ public class CenprotDevedor
         return this;
     }
     
-    public String getNome()
+    @Override
+    public CenprotDevedor setCpfOuCnpj( String cpfOuCnpj )
     {
-        return nome;
-    }
-
-    public CenprotDevedor setNome( String nome )
-    {
-        this.nome = nome;
+        super.setCpfOuCnpj( cpfOuCnpj );
         return this;
     }
-
-    public List<CenprotEndereco> getEnderecos()
+    
+    @Override
+    public CenprotDevedor setNome( String nome )
     {
-        return enderecos;
+        super.setNome( nome );
+        return this;
     }
-
-    public CenprotDevedor addEndereco( CenprotEndereco endereco )
+    
+    @Override
+    public CenprotDevedor add( CenprotEndereco endereco )
     {
-        enderecos.add( endereco );
+        super.add( endereco );
         return this;
     }
     

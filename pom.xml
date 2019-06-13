@@ -38,7 +38,6 @@
                 <configuration>
                     <instructions>
                         <Bundle-Activator>br.com.cartorio.protesto.cenprot.Activator</Bundle-Activator>
-                        <Export-Package/>
                     </instructions>
                 </configuration>
             </plugin>

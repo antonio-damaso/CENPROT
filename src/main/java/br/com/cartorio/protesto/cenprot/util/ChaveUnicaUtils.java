@@ -47,7 +47,7 @@ public class ChaveUnicaUtils
             total += ((valor * fator) % 10);
         }
         
-        return 10 - (total % 10);
+        return (10 - (total % 10)) % 10;
     }
     
     public static final boolean isValido( String chave )

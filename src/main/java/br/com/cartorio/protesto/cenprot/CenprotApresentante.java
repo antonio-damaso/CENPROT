@@ -3,7 +3,7 @@ package br.com.cartorio.protesto.cenprot;
 import java.util.LinkedList;
 import java.util.List;
 
-public class CenprotApresentante
+public class CenprotApresentante extends CenprotParte
 {
     public static final String PARTICULAR = "TAB";
     
@@ -15,16 +15,12 @@ public class CenprotApresentante
     
     // --------------
     
-    private String codigo;
-    private int tipo;
-    private String cpfOuCnpj;
-    private String nome;
-    private final List<CenprotEndereco> enderecos;
-    private final List<CenprotTitulo> titulos;
+    private String codigo;                          // código do CRA
+    private int tipo;                               // banco, empresa, condominio, governo ou particular
+    private final List<CenprotTitulo> titulos;      // os títulos relacionados com esse apresentante
 
     public CenprotApresentante()
     {
-        enderecos = new LinkedList<CenprotEndereco>();
         titulos = new LinkedList<CenprotTitulo>();
     }
 
@@ -49,32 +45,25 @@ public class CenprotApresentante
         this.tipo = tipo;
         return this;
     }
-
-    public String getCpfOuCnpj()
-    {
-        return cpfOuCnpj;
-    }
-
+    
+    @Override
     public CenprotApresentante setCpfOuCnpj( String cpfOuCnpj )
     {
-        this.cpfOuCnpj = cpfOuCnpj;
-        return this;
-    }
-
-    public String getNome()
-    {
-        return nome;
-    }
-
-    public CenprotApresentante setNome( String nome )
-    {
-        this.nome = nome;
+        super.setCpfOuCnpj( cpfOuCnpj );
         return this;
     }
     
+    @Override
+    public CenprotApresentante setNome( String nome )
+    {
+        super.setNome( nome );
+        return this;
+    }
+    
+    @Override
     public CenprotApresentante add( CenprotEndereco endereco )
     {
-        enderecos.add( endereco );
+        super.add( endereco );
         return this;
     }
     
@@ -82,11 +71,6 @@ public class CenprotApresentante
     {
         titulos.add( titulo );
         return this;
-    }
-    
-    public List<CenprotEndereco> getEnderecos() 
-    {
-        return enderecos;
     }
     
     public List<CenprotTitulo> getTitulos()

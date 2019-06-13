@@ -13,6 +13,17 @@ public class CenprotTitulo
     
     public static final String MOEDA_REAL = "001";
     
+    public static final int FALTA_DE_PAGAMENTO = 1;
+    public static final int FALTA_DE_ACEITE    = 2;
+    public static final int FALTA_DE_DEVOLUCAO = 3;
+    
+    public static final String CEDENTE_IGUAL_SACADOR     = "G";
+    public static final String CEDENTE_DIFERENTE_SACADOR = "H";
+    
+    public static final String ENDOSSO_MANDATO     = "M";
+    public static final String ENDOSSO_TRANSLATIVO = "T";
+    public static final String ENDOSSO_SEM         = "S";
+    
     private String chaveUnica;
     private String agencia;         // Somente para Bancos
     private String tipoDocumento;
